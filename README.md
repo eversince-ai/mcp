@@ -1,65 +1,30 @@
-# Eversince MCP Server
+# Eversince MCP server
 
-A hosted **Model Context Protocol (MCP)** server that exposes the Eversince creative agent — image, video, audio, and motion graphics generation — to any MCP-compatible client.
-
-- **Transport**: Streamable HTTP
-- **MCP SDK**: `@modelcontextprotocol/sdk` (server-side)
-- **Server URL**: `https://mcp.eversince.ai/mcp`
-
-## What this is
-
-This is an MCP server implementation. It speaks JSON-RPC 2.0 over HTTP per the MCP specification and exposes a set of MCP tools that let MCP clients (Claude Desktop, Cursor, Cline, Windsurf, claude.ai, Zed) drive the Eversince creative agent.
-
-The server is hosted by Eversince. There is nothing to install or run locally — connect any MCP client to the URL above.
-
-## MCP capabilities
-
-| Capability | Supported |
-|---|---|
-| `tools` | Yes |
-| `resources` | Yes |
-| `prompts` | No |
-| `sampling` | No |
-| `roots` | No |
-
-Tools are discovered via the standard MCP `tools/list` method. The current set is returned live by the server, with full input schemas.
-
-Resources are discovered via `resources/list` — the server exposes the agent-facing skill playbook, API reference, and advanced patterns documents at `eversince://skill`, `eversince://reference/api`, and `eversince://reference/patterns`.
-
-## Authentication
-
-The server implements **OAuth 2.1** authorization per the MCP authorization specification, with discovery via [RFC 9728 Protected Resource Metadata](https://datatracker.ietf.org/doc/rfc9728/) at `https://mcp.eversince.ai/.well-known/oauth-protected-resource`.
-
-Two credential types are accepted on the `Authorization: Bearer <token>` header:
-
-1. **OAuth 2.1 access token** — Issued via the standard MCP OAuth flow. MCP clients (Claude Desktop, Cursor, claude.ai) discover the authorization server automatically.
-2. **API key** — Static `es_live_*` key for programmatic clients. Create at https://eversince.ai/app/settings.
-
-On 401, the server returns a `WWW-Authenticate: Bearer` header so MCP clients can complete OAuth discovery.
-
-## Connect
-
-Most MCP clients accept the server URL directly via their MCP settings. For clients that only support local stdio servers, use a remote bridge such as [`mcp-remote`](https://github.com/geelen/mcp-remote).
-
-```json
-{
-  "mcpServers": {
-    "eversince": {
-      "url": "https://mcp.eversince.ai/mcp"
-    }
-  }
-}
-```
-
-## Links
+Eversince is the media workspace for agents. Connect and access a video editor, an image editor and a media library, built to be operated with tools: import footage, edit video on a timeline and stills on a canvas, generate images, video and audio, and render the result. This is the hosted Model Context Protocol server.
 
 | | |
 |---|---|
-| Production endpoint | `https://mcp.eversince.ai/mcp` |
-| OAuth metadata | `https://mcp.eversince.ai/.well-known/oauth-protected-resource` |
+| Server | `https://mcp.eversince.ai/mcp` |
+| Transport | Streamable HTTP, stateless |
+| Authentication | OAuth 2.1, discovered at `https://mcp.eversince.ai/.well-known/oauth-protected-resource`; or an API key on `Authorization: Bearer` |
+| Capabilities | tools |
 | Documentation | https://docs.eversince.ai |
-| Account & API keys | https://eversince.ai/app/settings |
+
+Nothing is installed or run. A client connects to the address and the user signs in. Agents like ChatGPT, Claude, Muse, and Grok Bot take the address as a connector. Claude Code, Codex, Cursor, VS Code and any client that accepts a URL add it as an HTTP MCP server. An agent that can run commands sets itself up from https://eversince.ai/skill.md.
+
+```sh
+claude mcp add --transport http eversince https://mcp.eversince.ai/mcp
+codex mcp add eversince --url https://mcp.eversince.ai/mcp
+```
+
+```json
+{ "mcpServers": { "eversince": { "url": "https://mcp.eversince.ai/mcp" } } }
+```
+
+## On the user's computer
+
+The Eversince desktop app, for Mac and Windows, runs the same server on the computer it is installed on, for the agents there, and works on files where they are. `npm install -g eversince` then `eversince init --agent <name>` connects an agent through the app. Details: https://docs.eversince.ai/mcp-server.
 
 ## License
 
-MIT for this README. The hosted MCP server is subject to the [Eversince Terms of Service](https://eversince.ai/terms).
+MIT for this README. The hosted server is subject to the [Eversince terms](https://eversince.ai/terms).
