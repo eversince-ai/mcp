@@ -1,6 +1,6 @@
 # Eversince MCP server
 
-Eversince is the media workspace for agents. Connect and access a video editor, an image editor and a media library, built to be operated with tools: import footage, edit video on a timeline and stills on a canvas, generate images, video and audio, and render the result. This is the hosted Model Context Protocol server.
+Eversince is the media workspace for agents. Agents search and understand media, down to moments inside recordings, edit video and stills in persistent documents, inspect and render the result, and continue from the same editable state when the user comes back with revisions. Beyond cuts: multicam, keyframes, grading with LUTs and masks, cutouts, audio cleanup and ducking, dubbing in the speaker's own voice, motion graphics, and, through the desktop app, export to Premiere Pro, DaVinci Resolve or Final Cut Pro. This is the hosted Model Context Protocol server.
 
 | | |
 |---|---|
@@ -10,7 +10,7 @@ Eversince is the media workspace for agents. Connect and access a video editor, 
 | Capabilities | tools |
 | Documentation | https://docs.eversince.ai |
 
-Nothing is installed or run. A client connects to the address and the user signs in. Agents like ChatGPT, Claude, Muse, and Grok Bot take the address as a connector. Claude Code, Codex, Cursor, VS Code and any client that accepts a URL add it as an HTTP MCP server. An agent that can run commands sets itself up from https://eversince.ai/skill.md.
+Nothing is installed or run. A client connects to the address and the user signs in. Agents like ChatGPT, Claude, Muse, and Grok Bot take the address as a connector. Claude Code, Codex, Cursor, VS Code and any client that accepts a URL add it as an HTTP MCP server. An agent that can run commands sets itself up from https://eversince.ai/skill.md. An agent that can do neither connects by a link the user opens and receives an API key, see https://docs.eversince.ai/connect.
 
 ```sh
 claude mcp add --transport http eversince https://mcp.eversince.ai/mcp
