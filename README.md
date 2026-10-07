@@ -10,7 +10,7 @@ Eversince is the media workspace for agents. Agents search and understand media,
 | Capabilities | tools |
 | Documentation | https://docs.eversince.ai |
 
-Nothing is installed or run. A client connects to the address and the user signs in. Agents like ChatGPT, Claude, Muse, and Grok Bot take the address as a connector. Claude Code, Codex, Cursor, VS Code and any client that accepts a URL add it as an HTTP MCP server. An agent that can run commands sets itself up from https://eversince.ai/skill.md. An agent that can do neither connects by a link the user opens and receives an API key, see https://docs.eversince.ai/connect.
+Nothing is installed or run. A client connects to the address and the user signs in. Agents like ChatGPT, Claude, Muse, and Grok Bot take the address as a connector. Claude Code, Codex, Cursor, VS Code and any client that accepts a URL add it as an HTTP MCP server. An agent that can run commands sets itself up from https://eversince.ai/skill.md. An agent that can do neither connects by a link the user opens and receives an API key (https://docs.eversince.ai/connect).
 
 ```sh
 claude mcp add --transport http eversince https://mcp.eversince.ai/mcp
