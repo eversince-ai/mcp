@@ -18,7 +18,7 @@ codex mcp add eversince --url https://mcp.eversince.ai/mcp
 ```
 
 ```json
-{ "mcpServers": { "eversince": { "url": "https://mcp.eversince.ai/mcp" } } }
+{ "mcpServers": { "eversince": { "type": "http", "url": "https://mcp.eversince.ai/mcp" } } }
 ```
 
 ## On the user's computer
