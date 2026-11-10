@@ -1,6 +1,6 @@
 # Eversince MCP server
 
-Eversince is the media workspace for agents. Agents search and understand media, down to moments inside recordings, edit video and images in persistent documents, inspect and render the result, and continue from the same editable state when the user comes back with revisions. Beyond cuts: multicam, keyframes, grading with LUTs and masks, cutouts, audio cleanup and ducking, dubbing in the speaker's own voice, motion graphics, and, through the desktop app, export to Premiere Pro, DaVinci Resolve or Final Cut Pro. This is the hosted Model Context Protocol server.
+Eversince is the media workspace for agents. Agents find, edit, design, generate and render images, video and audio with the user: clips cut from long recordings, pauses and filler words removed, vertical crops that follow the person, captions timed to each word, carousels and thumbnails, generated images, video, voice and music, and dubbing in the speaker's own voice. Media is searchable down to moments inside recordings. Every piece stays an editable timeline or canvas that the user sees and changes in the Eversince app before anything is rendered, and the next session continues from the same state. Through the desktop app, edits export to Premiere Pro, DaVinci Resolve or Final Cut Pro. This is the hosted Model Context Protocol server.
 
 | | |
 |---|---|
