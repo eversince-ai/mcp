@@ -23,7 +23,7 @@ codex mcp add eversince --url https://mcp.eversince.ai/mcp
 
 ## On the user's computer
 
-The Eversince desktop app, for Mac and Windows, runs the same server on the computer it is installed on, for the agents there, and works on files where they are. `npm install -g eversince` then `eversince init --agent <name>` connects an agent through the app. Details: https://docs.eversince.ai/mcp-server.
+The Eversince desktop app, for Mac and Windows and for a Linux machine an agent runs on (`npx eversince app install`), runs the same server on the computer it is installed on, for the agents there, and works on files where they are. `npm install -g eversince` then `eversince init --agent <name>` connects an agent through the app. Details: https://docs.eversince.ai/mcp-server.
 
 ## License
 
