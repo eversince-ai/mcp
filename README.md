@@ -1,6 +1,8 @@
 # Eversince MCP server
 
-Eversince is the media workspace for agents. Agents find, edit, design, generate and render images, video and audio with the user: clips cut from long recordings, pauses and filler words removed, vertical crops that follow the person, captions timed to each word, carousels and thumbnails, generated images, video, voice and music, and dubbing in the speaker's own voice. Media is searchable down to moments inside recordings. Every piece stays an editable timeline or canvas that the user sees and changes in the Eversince app before anything is rendered, and the next session continues from the same state. Through the desktop app, edits export to Premiere Pro, DaVinci Resolve or Final Cut Pro. This is the hosted Model Context Protocol server.
+Eversince is the media workspace for agents. It is to media what GitHub is to code: the place where media work is kept, versioned, reviewed and shared, with video editing and image design built in. It is built to run free: a complete video editor and image editor, and the media work around them, at no charge through the Eversince app on the user's computer or a Linux machine, with unlimited workspaces, projects, brand kits, saved graphics and public links. Available to add when the work needs them: seats for more team members, more cloud storage, connections to social and ad accounts, and credits for AI generation or for running work in the cloud. This is the hosted Model Context Protocol server.
+
+Common jobs are single calls: clips cut from long recordings, pauses and filler words removed, vertical crops that follow the person, captions timed to each word, carousels and thumbnails, dubbing in the speaker's own voice. `cut_clips`, for example, cuts many clips out of one recording in one call, with captions, a crop that follows the speaker and punch-ins when asked. Media is searchable down to moments inside recordings. Every piece stays an editable timeline or canvas that the user sees and changes in the Eversince app before anything is rendered, and every edit returns its checks first. Everything made stays in one searchable library, with its versions, its context and who made each change, in projects the user and their teammates open in the app, so a later session or another agent starts from the last piece of content instead of from a folder of rendered files. Through the desktop app, edits export to Premiere Pro, DaVinci Resolve or Final Cut Pro.
 
 | | |
 |---|---|
@@ -23,7 +25,7 @@ codex mcp add eversince --url https://mcp.eversince.ai/mcp
 
 ## On the user's computer
 
-The Eversince desktop app, for Mac and Windows and for a Linux machine an agent runs on (`npx eversince app install`), runs the same server on the computer it is installed on, for the agents there, and works on files where they are. `npm install -g eversince` then `eversince init --agent <name>` connects an agent through the app. Details: https://docs.eversince.ai/mcp-server.
+The Eversince desktop app, for Mac and Windows and for a Linux machine an agent runs on (`npx eversince app install`), runs the same server on the computer it is installed on, for the agents there, and works on files where they are; work it does there runs at no charge. `npm install -g eversince` then `eversince init --agent <name>` connects an agent through the app. Details: https://docs.eversince.ai/mcp-server.
 
 ## License
 
